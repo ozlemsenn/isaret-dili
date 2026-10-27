@@ -1,0 +1,3 @@
+Eğitilmiş model dosyaları (model.pt) ve MediaPipe .task dosyaları buraya iner.
+Boyutları büyük olduğu için GitHub'a yüklenmezler (.gitignore'da).
+Kaggle çıktısındaki demo_paketi.zip içinden alınır.

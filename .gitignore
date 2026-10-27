@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.ipynb_checkpoints/
+
+# Büyük dosyalar - GitHub'a konmaz
+models/*.pt
+models/*.task
+*.npy
+noktalar/
+demo_paketi.zip
+*.mp4
+
+# Veri seti asla depoya girmez (kullanım koşulları)
+data/
+AUTSL/

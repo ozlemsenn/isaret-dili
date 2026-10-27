@@ -1,0 +1,42 @@
+İŞARET TANIMA DEMOSU - KENDİ BİLGİSAYARINDA ÇALIŞTIRMA
+=====================================================
+
+Bu klasördekiler:
+  app.py            kamera demosu (bunu çalıştıracaksın)
+  landmarks.py      görüntüden el ve vücut noktalarını çıkarır (MediaPipe)
+  preprocess.py     noktaları modele hazırlar (eğitimdekiyle aynı dosya)
+  models.py         kelime tanıma modeli (GRU)
+  models/           eğitilmiş model, kelime listesi ve MediaPipe model dosyaları
+  ornek_videolar/   öğretilen her kelimenin örnek videoları (GIF; çift tıklayıp izle, işareti buradan çalış)
+  sonuclar/         hocaya gösterebileceğin grafikler (örnek kare, eğitim eğrisi, karışıklık matrisi)
+
+1) KURULUM (bir kez, internet gerekir; torch indirmesi birkaç dakika sürebilir)
+   - Python 3.11 veya 3.12 kurulu olmalı (python.org).
+     Windows'ta kurarken "Add python.exe to PATH" kutusunu işaretle.
+   - Bu klasörde bir terminal aç:
+       Windows: klasörün adres çubuğuna cmd yazıp Enter'a bas.
+       macOS:   Terminal'de  cd  yazıp bir boşluk bırak, klasörü pencereye sürükle, Enter.
+   - Sırayla şu komutları yaz:
+       python -m venv venv
+       venv\Scripts\activate          (macOS: source venv/bin/activate)
+       pip install -r requirements.txt
+
+2) ÇALIŞTIRMA
+       venv\Scripts\activate          (macOS: source venv/bin/activate)
+       python app.py
+   Kamera açılmazsa:  python app.py 1
+   macOS'ta ilk seferde Terminal'e kamera izni vermen gerekebilir.
+
+3) KULLANIM
+   - Belden yukarın kadrajda olsun, ışık önden gelsin.
+   - Görüntü ortadan kare kırpılır (eğitim videoları kare olduğu için); kadrajın ortasında dur.
+   - Ellerin aşağıda (kadraj dışında) beklesin.
+   - Elini kaldır, işareti yap, ellerini tekrar indir. Kelime ekranda listeye eklenir.
+   - Otomatik mod sorun çıkarırsa SPACE'e bas, işareti yap, tekrar SPACE'e bas.
+   - Backspace: son kelimeyi sil   c: temizle   a: otomatik modu aç/kapat   q: çıkış
+   - "Emin olamadım" yazıyorsa işareti biraz daha net ve AUTSL videolarındaki gibi yap.
+
+4) SIK KARŞILAŞILAN SORUNLAR
+   - "python bulunamadı": Python'u PATH seçeneğiyle yeniden kur ya da "py" komutunu dene.
+   - "No module named ...": venv etkin değil; activate komutunu tekrar çalıştır.
+   - mediapipe kurulmuyorsa: pip install mediapipe   (sürüm belirtmeden)
